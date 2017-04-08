@@ -49,3 +49,7 @@ dependencyManagement {
 		mavenBom "com.vaadin:vaadin-bom:8.0.5"
 	}
 }
+
+springBoot {
+	executable = true
+}
