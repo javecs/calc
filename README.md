@@ -14,3 +14,6 @@ $ cd calc
 $ gradle bootRun
 ```
 - [localhost:8080](http://localhost:8080/)にアクセスして見てください。
+
+## お試し環境
+- http://calc.javecs.xyz/
