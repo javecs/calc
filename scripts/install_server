@@ -1,0 +1,12 @@
+#!/bin/bash
+mkdir -p /var/javecs/
+
+cp -f build/libs/calc-0.0.1-SNAPSHOT.jar /var/javecs/javecs-calc
+chmod 500 /var/javecs/javecs-calc
+chattr +i /var/javecs/javecs-calc
+chown ec2-user:ec2-user /var/javecs/javecs-calc
+ln -s /var/javecs/javecs-calc /etc/init.d/javecs-calc
+
+cp -f scripts/javecs-calc.conf /var/javecs/javecs-calc.conf
+chmod 400 /var/javecs/javecs-calc.conf
+chown root:root /var/javecs/javecs-calc.conf

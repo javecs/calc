@@ -1,0 +1,3 @@
+#!/bin/bash
+service javecs-calc start
+
