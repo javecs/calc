@@ -4,6 +4,9 @@ files:
   - source: /
     destination: /var/javecs/calc
 hooks:
+  BeforeInstall:
+    - location: scripts/before_install
+      runas: root
   AfterInstall:
     - location: scripts/install_server
       runas: root
