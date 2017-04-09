@@ -1,13 +1,12 @@
 version: 0.0
 os: linux
 files:
-  - source: build/libs/javecs-calc
-    destination: /var/javecs/
+  - source: /
+    destination: /var/javecs/calc
 hooks:
-  BeforeInstall:
-    - location: scripts/build_server
   AfterInstall:
-      - location: scripts/install_server
+    - location: scripts/install_server
+      runas: root
   ApplicationStart:
     - location: scripts/start_server
       timeout: 300
