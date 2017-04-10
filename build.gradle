@@ -29,14 +29,13 @@ compileTestKotlin {
 
 repositories {
 	mavenCentral()
+	maven {
+		url  "http://dl.bintray.com/javecs/tools"
+	}
 }
 
 dependencies {
-	compile files("libs/expr-0.0.9.jar")
-	compile group: 'org.antlr', name: 'antlr4-runtime', version: '4.7'
-}
-
-dependencies {
+	compile('xyz.javecs.tools:expr:0.0.11')
 	compile('com.vaadin:vaadin-spring-boot-starter')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")

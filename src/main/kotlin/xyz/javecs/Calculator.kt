@@ -5,6 +5,7 @@ import com.vaadin.event.ShortcutAction
 import com.vaadin.server.VaadinRequest
 import com.vaadin.spring.annotation.SpringUI
 import com.vaadin.ui.*
+import xyz.javecs.tools.expr.eval
 
 @Theme("valo")
 @SpringUI
@@ -18,7 +19,7 @@ class Calculator : UI() {
     val eval = Button("計算").apply {
         addClickListener({ _ ->
             try {
-                val value = xyz.javecs.expr.eval(expr.value).toString()
+                val value = eval(expr.value).toString()
                 layout.addComponent(Label("${expr.value} = $value"))
             } catch (e: Exception) {
                 Notification.show(e.message, Notification.Type.WARNING_MESSAGE)
