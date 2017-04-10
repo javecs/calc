@@ -18,19 +18,26 @@ fun main(args: Array<String>) {
 @Theme("valo")
 @SpringUI
 class Calculator : UI() {
-    val text = TextArea().apply {
+    val layout = VerticalLayout()
+
+    val expr = TextArea().apply {
         placeholder = "数式入力..."
         rows = 1
     }
 
-    var eval = Button("計算", { _ ->
-        Notification.show("${eval(text.value)}")
+    val eval = Button("計算", { _ ->
+        try {
+            val value = eval(expr.value).toString()
+            layout.addComponent(Label("${expr.value} = $value"))
+        } catch (e: Exception) {
+            Notification.show(e.message, Notification.Type.WARNING_MESSAGE)
+        }
     })
 
     override fun init(request: VaadinRequest?) {
-        content = HorizontalLayout().apply {
-            setMargin(true)
-            addComponents(eval, text)
-        }
+        layout.addComponent(HorizontalLayout().apply {
+            addComponents(eval, expr)
+        })
+        content = layout
     }
 }
