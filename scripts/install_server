@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 cd /var/javecs/calc
 gradle build -x test
 
