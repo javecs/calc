@@ -1,4 +1,4 @@
-# calc
+# calc [![Build Status](https://travis-ci.org/javecs/calc.svg?branch=master)](https://travis-ci.org/javecs/calc)
 電卓です。
 
 ## 使うもの
