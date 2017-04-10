@@ -17,3 +17,4 @@ $ gradle bootRun
 
 ## お試し環境
 - http://calc.javecs.xyz/
+    - `GitHub Auto-Deployment`、`AWS CodeDeploy`と連動してデプロイされた環境です。
