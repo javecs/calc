@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-	compile('xyz.javecs.tools:expr:0.0.+')
+	compile("xyz.javecs.tools:expr:latest.release")
 	compile('com.vaadin:vaadin-spring-boot-starter')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
@@ -55,4 +55,9 @@ dependencyManagement {
 
 springBoot {
 	executable = true
+}
+
+configurations.all {
+	// Check for updates every build
+	resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
