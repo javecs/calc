@@ -3,7 +3,7 @@
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 cd /var/javecs/calc
-gradle build -x test
+./gradlew --refresh-dependencies build -x test
 
 cp -f build/libs/calc-0.0.1-SNAPSHOT.jar /var/javecs/javecs-calc
 chown ec2-user:ec2-user /var/javecs/javecs-calc

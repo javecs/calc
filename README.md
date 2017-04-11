@@ -5,7 +5,8 @@
 - Kotlin 1.1
 - Spring Boot 1.5.2
 - Vaadin 8
-- [expr](https://github.com/javecs/expr) 0.0.+
+- [expr](https://github.com/javecs/expr) 
+  - ```"xyz.javecs.tools:expr:latest.release"```
 
 ## ビルド＆実行
 ```
