@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-	compile('xyz.javecs.tools:expr:0.0.14')
+	compile('xyz.javecs.tools:expr:0.0.+')
 	compile('com.vaadin:vaadin-spring-boot-starter')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
