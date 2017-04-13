@@ -6,7 +6,7 @@
 - Spring Boot 1.5.2
 - Vaadin 8
 - [expr](https://github.com/javecs/expr) 
-  - ```"xyz.javecs.tools:expr:latest.release"```
+  - ```"xyz.javecs.tools:expr:0.0.16"```
 
 ## ビルド＆実行
 ```
