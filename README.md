@@ -16,6 +16,5 @@ $ gradle bootRun
 ```
 - [localhost:8080](http://localhost:8080/)にアクセスして見てください。
 
-## お試し環境
-- http://calc.javecs.xyz/
-    - `GitHub Auto-Deployment`、`AWS CodeDeploy`と連動してデプロイされた環境です。
+## 動作画面
+![Calc](http://i.imgur.com/xkgiaEJ.gif)
