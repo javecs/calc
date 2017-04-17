@@ -5,32 +5,34 @@ import com.vaadin.event.ShortcutAction
 import com.vaadin.server.VaadinRequest
 import com.vaadin.spring.annotation.SpringUI
 import com.vaadin.ui.*
-import xyz.javecs.tools.expr.eval
+import xyz.javecs.tools.expr.Calculator
 
 @Theme("valo")
 @SpringUI
-class Calculator : UI() {
+class CalculatorUI : UI() {
+    val calc = Calculator()
     val layout = VerticalLayout()
 
-    val expr = TextField().apply {
+    val textField = TextField().apply {
         placeholder = "数式入力..."
     }
 
-    val eval = Button("計算").apply {
+    val button = Button("計算").apply {
         addClickListener({ _ ->
             try {
-                val value = eval(expr.value).toString()
-                layout.addComponent(Label("${expr.value} = $value"))
+                val expr = textField.value
+                layout.addComponent(Label("$expr : ${calc.eval(expr).value}"))
             } catch (e: Exception) {
                 Notification.show(e.message, Notification.Type.WARNING_MESSAGE)
             }
+            textField.clear()
         })
         setClickShortcut(ShortcutAction.KeyCode.ENTER)
     }
 
     override fun init(request: VaadinRequest?) {
         layout.addComponent(HorizontalLayout().apply {
-            addComponents(eval, expr)
+            addComponents(button, textField)
         })
         content = layout
     }
