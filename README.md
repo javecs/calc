@@ -5,8 +5,7 @@
 - Kotlin 1.1
 - Spring Boot 1.5.2
 - Vaadin 8
-- [expr](https://github.com/javecs/expr) 
-  - ```"xyz.javecs.tools:expr:0.0.16"```
+- [textField 0.1.6](https://github.com/javecs/textField) 
 
 ## ビルド＆実行
 ```
