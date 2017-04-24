@@ -1,8 +1,0 @@
-#!/bin/bash
-
-if [ -d /var/javecs/calc ]; then
-    rm -rf /var/javecs/calc
-fi
-
-mkdir -vp /var/javecs/calc
-

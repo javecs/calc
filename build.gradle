@@ -1,63 +1,65 @@
 buildscript {
-	ext {
-		kotlinVersion = '1.1.1'
-		springBootVersion = '1.5.2.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
-	}
+    ext {
+        kotlinVersion = '1.1.1'
+        springBootVersion = '1.5.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+        classpath 'com.google.cloud.tools:appengine-gradle-plugin:1.1.1'
+    }
 }
 
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'com.google.cloud.tools.appengine'
 
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 compileKotlin {
-	kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "1.8"
 }
 compileTestKotlin {
-	kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "1.8"
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 repositories {
-	maven {
-		url  "http://dl.bintray.com/javecs/tools"
-	}
+    maven {
+        url "http://dl.bintray.com/javecs/tools"
+    }
 }
 
 dependencies {
-	compile("xyz.javecs.tools:expr:0.2.3")
-	compile('com.vaadin:vaadin-spring-boot-starter')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
-	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile("org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}")
+    compile("xyz.javecs.tools:expr:0.2.3")
+    compile('com.vaadin:vaadin-spring-boot-starter')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
+    compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile("org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}")
 }
 
 dependencyManagement {
-	imports {
-		mavenBom "com.vaadin:vaadin-bom:8.0.5"
-	}
+    imports {
+        mavenBom "com.vaadin:vaadin-bom:8.0.5"
+    }
 }
 
 springBoot {
-	executable = true
+    executable = true
 }
 
 configurations.all {
-	// Check for updates every build
-	resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    // Check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
