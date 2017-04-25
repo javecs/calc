@@ -5,3 +5,5 @@ runtime_config:
 handlers:
 - url: /.*
   script: this field is required, but ignored
+manual_scaling:
+  instances: 1
