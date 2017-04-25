@@ -20,5 +20,4 @@ $ gradle bootRun
 
 
 ## お試し環境
-- 実際、Google App Engineで動かしている環境です。
-  - [calc.javecs.xyz]((http://calc.javecs.xyz))
+- 実際、[Google App Engine上](http://calc.javecs.xyz)で動かしている環境です。
