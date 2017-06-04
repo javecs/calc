@@ -17,7 +17,3 @@ $ gradle bootRun
 
 ## 動作画面
 ![Calc](http://i.imgur.com/hDFM0Iu.gif)
-
-
-## お試し環境
-- 実際、[Google App Engine上](http://calc.javecs.xyz)で動かしている環境です。
